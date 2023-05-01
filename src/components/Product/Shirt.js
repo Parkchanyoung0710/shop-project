@@ -9,6 +9,7 @@ const Shirt = () => {
       <div>
           <h1 className="bg-info text-white">SHIRT</h1>
           {items.map((item) => (
+                  <div key={item.id}>  
               <div className="d-inline-flex">
               <Card
                className="shadow p-2 m-3 bg-body rounded"
@@ -17,10 +18,10 @@ const Shirt = () => {
               <Card.Img
               style={{ height: '16rem' }}
               className="p-1"
-               variant="top"
-               src={require(`./assets/${item.image}.png`)}
-               
-                />
+              variant="top"
+              src={require(`./assets/${item.image}.png`)}
+              
+              />
               <Card.Body>
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Text>{item.desc}</Card.Text>
@@ -29,6 +30,7 @@ const Shirt = () => {
               </Card.Body>
               </Card>
               </div> 
+              </div>
   
           ))}
           </div> 

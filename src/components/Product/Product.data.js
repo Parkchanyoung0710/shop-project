@@ -277,7 +277,7 @@ export const shirtData = [
         desc: "매력적인 오버핏 셔츠!",
         price: "49,000원",
         image: "sh1",
-        qty: 1,
+        
     },
 
     {
@@ -286,7 +286,7 @@ export const shirtData = [
         desc: "봄/초여름 입기 좋음!",
         price: "32,000원",
         image: "sh2",
-        qty: 1,
+        
     },
 
     {
@@ -295,7 +295,7 @@ export const shirtData = [
         desc: "코디하기 쉬운 셔츠!!",
         price: "41,000원",
         image: "sh3",
-        qty: 1,
+        
     },
 
     {
@@ -304,7 +304,7 @@ export const shirtData = [
         desc: "시원한 오버셔츠입니다!",
         price: "38,000원",
         image: "best4",
-        qty: 1,
+       
     },
 
     {
@@ -313,7 +313,7 @@ export const shirtData = [
         desc: "코디하기 좋은 심플함!",
         price: "59,000원",
         image: "sh4",
-        qty: 1,
+        
     },
 
     {
@@ -322,7 +322,7 @@ export const shirtData = [
         desc: "시원한 여름 코디!",
         price: "30,000원",
         image: "sh5",
-        qty: 1,
+        
     },
 
     {
@@ -331,7 +331,7 @@ export const shirtData = [
         desc: "스타일리쉬한 코디!",
         price: "42,000원",
         image: "sh6",
-        qty: 1,
+        
     },
 
     {
@@ -340,7 +340,7 @@ export const shirtData = [
         desc: "퀄리티 높은 무지셔츠!",
         price: "37,000원",
         image: "sh7",
-        qty: 1,
+       
     },
 
     {
@@ -349,7 +349,7 @@ export const shirtData = [
         desc: "시원한 색감인 셔츠!",
         price: "29,700원",
         image: "sh8",
-        qty: 1,
+        
     },
 
     {
@@ -358,7 +358,7 @@ export const shirtData = [
         desc: "체형을 보완하는 셔츠!",
         price: "36,000원",
         image: "sh9",
-        qty: 1,
+        
     }
 ];
 

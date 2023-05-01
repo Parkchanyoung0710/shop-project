@@ -9,6 +9,7 @@ const Pants = () => {
       <div>
           <h1 className="bg-info text-white">PANTS</h1>
           {items.map((item) => (
+              <div key={item.id}>  
               <div className="d-inline-flex">
               <Card
                className="shadow p-2 m-3 bg-body rounded"
@@ -27,6 +28,7 @@ const Pants = () => {
                   <Button variant="primary">장바구니 담기</Button>
               </Card.Body>
               </Card>
+              </div> 
               </div> 
   
           ))}

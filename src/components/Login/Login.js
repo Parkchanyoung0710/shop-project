@@ -6,7 +6,7 @@ import { auth } from "../../firebase";
 import styles from "./Login.module.css";
 
 function Login() {
-  
+
   const navigate = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -26,7 +26,9 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
+        console.log("로그인 성공")
         navigate("./Main");
+        
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);

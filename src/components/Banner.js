@@ -6,7 +6,7 @@ function Banner() {
     <Carousel variant="dark">
       <Carousel.Item>
         <img
-          className="d-block w-100"class="img-fluid"
+          className="d-block w-100 img-fluid"
           src="./banner1.jpg"
           alt="First slide"
         />
@@ -16,7 +16,7 @@ function Banner() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"class="img-fluid"
+          className="d-block w-100 img-fluid"
           src="./banner2.jpg"
           alt="Second slide"
         />

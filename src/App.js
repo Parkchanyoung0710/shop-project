@@ -11,7 +11,9 @@ import Shirt from './components/Product/Shirt';
 import Pants from './components/Product/Pants';
 import Signup from './components/Signup/Signup';
 import Main from "./page/Main";
-import Basket from './page/Basket';
+
+import Board from './page/Board';
+import Logout from './components/Login/Logout';
 
 
 function App() {
@@ -25,13 +27,12 @@ function App() {
         <Route path="/" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/Main" element={<Main/>} />
-        <Route path="/Basket" element={<Basket />} />
+        <Route path="/Board" element={<Board />} />
         <Route path="/Best" element={<Best />} />
         <Route path="/Top" element={<Top />} />
         <Route path="/Shirt" element={<Shirt />} />
         <Route path="/Pants" element={<Pants />} />
-        
-       
+        <Route path="/Logout" element={<Logout />} />
         
       </Routes>
       

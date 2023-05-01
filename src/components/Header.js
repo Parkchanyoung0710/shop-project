@@ -6,9 +6,8 @@ import React from 'react';
 
 
 
+
 function Header() {
-  
-  
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -29,7 +28,7 @@ function Header() {
             
               <BsCart4 className="icon" size="20"/></Nav.Link>
               <span>0</span>
-            
+              
             <Nav.Link href="/Profile">프로필</Nav.Link>
             
           </Nav>

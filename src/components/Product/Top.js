@@ -9,6 +9,7 @@ const TOP = () => {
       <div>
           <h1 className="bg-info text-white">TOP</h1>
           {items.map((item) => (
+              <div key={item.id}>  
               <div className="d-inline-flex">
               <Card
                className="shadow p-2 m-3 bg-body rounded"
@@ -28,7 +29,7 @@ const TOP = () => {
               </Card.Body>
               </Card>
               </div> 
-  
+              </div> 
           ))}
           </div> 
   );
