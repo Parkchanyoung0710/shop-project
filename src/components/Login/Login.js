@@ -26,8 +26,9 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
-        console.log("로그인 성공")
+        
         navigate("./Main");
+        alert('로그인 성공!');
         
       })
       .catch((err) => {

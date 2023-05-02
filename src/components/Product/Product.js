@@ -11,8 +11,7 @@ const Product = () => {
           
           <h1 className="bg-info text-white">WEEKLY BEST</h1>
           {items.map((item) => (
-              <div key={item.id}>  
-              <div className="d-inline-flex">
+              <div key={item.id} className="d-inline-flex">   
               <Card
                className="shadow p-2 m-3 bg-body rounded"
                style={{ width: '15rem' }}
@@ -32,7 +31,7 @@ const Product = () => {
               </Card.Body>
               </Card>
               </div> 
-              </div> 
+              
           ))}
           </div> 
   );

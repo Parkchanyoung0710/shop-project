@@ -11,9 +11,8 @@ import Shirt from './components/Product/Shirt';
 import Pants from './components/Product/Pants';
 import Signup from './components/Signup/Signup';
 import Main from "./page/Main";
-
 import Board from './page/Board';
-import Logout from './components/Login/Logout';
+
 
 
 function App() {
@@ -32,7 +31,7 @@ function App() {
         <Route path="/Top" element={<Top />} />
         <Route path="/Shirt" element={<Shirt />} />
         <Route path="/Pants" element={<Pants />} />
-        <Route path="/Logout" element={<Logout />} />
+        
         
       </Routes>
       
