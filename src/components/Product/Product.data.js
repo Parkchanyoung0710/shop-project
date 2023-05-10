@@ -455,3 +455,15 @@ export const PantsData = [
     }
     
 ];
+
+export const WeatherData = [
+    {
+        id: 10,
+        title:"에이드분또 반팔",
+        desc: "핏이 살아있는 티!",
+        price: "22,000원",
+        image: "top6",
+        qty: 1,
+    }
+    
+]

@@ -32,8 +32,8 @@ function Signup() {
         await updateProfile(user, {
           displayName: values.name,
         });
-        alert('회원가입 성공!');
         navigate("/");
+        alert('회원가입 성공!');
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);

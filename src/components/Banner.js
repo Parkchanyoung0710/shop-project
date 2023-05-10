@@ -6,7 +6,7 @@ function Banner() {
     <Carousel variant="dark">
       <Carousel.Item>
         <img
-          className="d-block w-100 img-fluid"
+          className="d-block w-100 img-fluid" 
           src="./banner1.jpg"
           alt="First slide"
         />

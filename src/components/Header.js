@@ -20,6 +20,7 @@ function Header() {
             <Nav.Link href="/top">TOP</Nav.Link>
             <Nav.Link href="/pants">PANTS</Nav.Link>
             <Nav.Link href="/shirt">SHIRT</Nav.Link>
+            <Nav.Link href="/Weather">오늘의 코디</Nav.Link>
           </Nav>
           <Nav>
             
@@ -29,7 +30,7 @@ function Header() {
               <BsCart4 className="icon" size="20"/></Nav.Link>
               <span>0</span>
               
-            <Nav.Link href="/Profile">프로필</Nav.Link>
+            
             
           </Nav>
         </Navbar.Collapse>

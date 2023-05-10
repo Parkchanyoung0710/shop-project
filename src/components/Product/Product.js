@@ -13,7 +13,7 @@ const Product = () => {
           {items.map((item) => (
               <div key={item.id} className="d-inline-flex">   
               <Card
-               className="shadow p-2 m-3 bg-body rounded"
+               className="shadow p-2 m-4 bg-body rounded"
                style={{ width: '15rem' }}
                >   
               <Card.Img

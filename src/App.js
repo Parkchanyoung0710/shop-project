@@ -12,6 +12,7 @@ import Pants from './components/Product/Pants';
 import Signup from './components/Signup/Signup';
 import Main from "./page/Main";
 import Board from './page/Board';
+import Weather from './components/Product/Weather';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Top" element={<Top />} />
         <Route path="/Shirt" element={<Shirt />} />
         <Route path="/Pants" element={<Pants />} />
+        <Route path="/Weather" element={<Weather />} />
         
         
       </Routes>
