@@ -2,8 +2,13 @@ import { useState, useEffect } from 'react';
 
 import axios from 'axios';
 import styled from 'styled-components';
-import { Card, Form } from 'react-bootstrap';
+import Box from '@mui/material/Box';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Grid from '@mui/material/Unstable_Grid2';
 
+import CardBox from '../CardBox';
 import { WeatherData } from './Product.data';
 
 function Weather() {
@@ -36,15 +41,21 @@ function Weather() {
       <div>
         <h1 className='bg-info text-white'>오늘의 코디 추천</h1>
         <div className='appContentWrap'>
-          <h1>도시를 선택하세요.</h1>
-          <Form.Select aria-label='Default select example' defaultValue='Seoul' onChange={handleUpdateLocation}>
-            <option value='Seoul'>서울</option>
-            <option value='Incheon'>인천</option>
-            <option value='Daejeon'>대전</option>
-            <option value='Daegu'>대구</option>
-            <option value='Gwangju'>광주</option>
-            <option value='Busan'>부산</option>
-          </Form.Select>
+          <h2>도시를 선택하세요.</h2>
+
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <Select defaultValue='Seoul' onChange={handleUpdateLocation}>
+                <MenuItem value='Seoul'>서울</MenuItem>
+                <MenuItem value='Incheon'>인천</MenuItem>
+                <MenuItem value='Daejeon'>대전</MenuItem>
+                <MenuItem value='Daegu'>대구</MenuItem>
+                <MenuItem value='Gwangju'>광주</MenuItem>
+                <MenuItem value='Busan'>부산</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+
           {Object.keys(result).length !== 0 && (
             <ResultWrap>
               <div className='city'>{result.data.name}</div>
@@ -55,18 +66,22 @@ function Weather() {
 
               {/* 기온에 따라 옷 코디 바꾸기 */}
 
-              <div>
-                {items.map((item) => (
-                  <div key={item.id} className='d-inline-flex'>
-                    <Card className='shadow p-2 m-2 bg-body rounded' style={{ width: '16em' }}>
-                      <Card.Img className='p-1' style={{ height: '15rem' }} variant='top' src={require(`./assets/${item.image}.png`)} />
-                      <Card.Body>
-                        <Card.Title>{item.title}</Card.Title>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                ))}
-              </div>
+              {/* <CardBox /> */}
+
+              <Box sx={{ width: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
+                <Grid container spacing={{ xs: 4, md: 4 }} columns={{ xs: 4, sm: 4, md: 4 }} sx={{ flexWrap: 'nowrap' }}>
+                  {items
+                    .filter((item) => {
+                      const temp = Math.round((result.data.main.temp - 273.15) * 1);
+                      if (item.temper <= temp + 5 && temp - 5 <= item.temper) return item;
+                    })
+                    .map((item) => (
+                      <Grid xs={2} sm={4} md={4} key={item.id} className='recommend-cloth'>
+                        <CardBox key={item.id} cardTitle={item.title} imageSrc={`./Product/assets/${item.image}.png`} cardDetail={item.desc} cardPrice={item.price} />
+                      </Grid>
+                    ))}
+                </Grid>
+              </Box>
             </ResultWrap>
           )}
         </div>
@@ -117,5 +132,12 @@ const ResultWrap = styled.div`
     font-size: 25px;
     text-align: center;
     margin-top: 8px;
+  }
+
+  .recommend-cloth {
+    span {
+      white-space: nowrap;
+      font-size: 20px;
+    }
   }
 `;

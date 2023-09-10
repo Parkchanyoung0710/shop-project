@@ -1,38 +1,26 @@
-import React, {useState} from "react";
-import { shirtData } from "./Product.data";
-import {Card,Button} from "react-bootstrap";
+import React, { useState } from 'react';
+import Grid from '@mui/material/Unstable_Grid2';
+import { Box } from '@mui/material';
+
+import { shirtData } from './Product.data';
+import CardBox from '../CardBox';
 
 const Shirt = () => {
-    const [items] = useState(shirtData);
-  
+  const [items] = useState(shirtData);
+
   return (
-      <div>
-          <h1 className="bg-info text-white">SHIRT</h1>
+    <div>
+      <h1 className='bg-info text-white'>SHIRT</h1>
+      <Box sx={{ width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto', marginBottom: 10 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {items.map((item) => (
-              <div key={item.id} className="d-inline-flex">  
-              <Card
-               className="shadow p-2 m-4 bg-body rounded"
-               style={{ width: '15rem' }}
-               >   
-              <Card.Img
-              style={{ height: '16rem' }}
-              className="p-1"
-              variant="top"
-              src={require(`./assets/${item.image}.png`)}
-              
-              />
-              <Card.Body>
-                  <Card.Title>{item.title}</Card.Title>
-                  <Card.Text>{item.desc}</Card.Text>
-                  <h6>가격:{item.price}</h6>
-                  <Button variant="outline-success" size="sm">장바구니</Button>{' '}
-              </Card.Body>
-              </Card>
-              </div> 
-              
-  
+            <Grid xs={2} sm={4} md={4} key={item.id}>
+              <CardBox key={item.id} cardTitle={item.title} imageSrc={`./Product/assets/${item.image}.png`} cardDetail={item.desc} cardPrice={item.price} />
+            </Grid>
           ))}
-          </div> 
+        </Grid>
+      </Box>
+    </div>
   );
 };
 
