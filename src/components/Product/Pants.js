@@ -24,7 +24,7 @@ const Pants = () => {
                   <Card.Title>{item.title}</Card.Title>
                   <Card.Text>{item.desc}</Card.Text>
                   <h6>가격:{item.price}</h6>
-                  <Button variant="outline-success" size="sm">장바구니</Button>{' '}
+                  <Button variant="outline-success" size="sm" >장바구니</Button>{' '}
               </Card.Body>
               </Card>
               </div> 

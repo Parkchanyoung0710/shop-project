@@ -12,58 +12,20 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+    
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    
+    <title>Shopping Mall</title>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Shopping MAll</title>
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
-    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
-    <script>
-    Kakao.init('00039de51010e70ae33c405f246ebfc5'); // 사용하려는 앱의 JavaScript 키 입력
-    </script>
 
-<style>
-  .kakaoChat {
-      position: fixed;
-      right: 25px;
-      bottom: 15px;
-      width: 50px;
-      height: 50px;
-      z-index: 99;
-  }
-</style>
-</head>
-<body>
-<!-- <a href="http://pf.kakao.com/_testUK/chat" target="_blank"><img class="kakaoChat" src="./kakaotalk.png" alt="카카오톡투명로고"/></a> -->
-</body>
-    <script>
-    function chatChannel() {
-    Kakao.Channel.chat({
-      channelPublicId: 'OnePick몰', // 카카오 채널 이름
-    });
-    }
-    </script>
-  </head>
+
+    
+  
   <body>
 
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-      <script
-      src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
-      integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx"
-      crossorigin="anonymous"
-    ></script>
+      
     <script>
       Kakao.init("	00039de51010e70ae33c405f246ebfc5"); // 사용하려는 앱의 JavaScript 키 입력
     </script>
@@ -74,5 +36,6 @@
         });
       }
     </script>
+    
   </body>
 </html>

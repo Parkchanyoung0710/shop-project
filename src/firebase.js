@@ -5,6 +5,7 @@ import { getFirestore} from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyAGcRZjJtBJVaLCbLddU8ru95MobJwZNdk",
   authDomain: "shop-962b7.firebaseapp.com",
+  databaseURL: "https://shop-962b7-default-rtdb.firebaseio.com",
   projectId: "shop-962b7",
   storageBucket: "shop-962b7.appspot.com",
   messagingSenderId: "328206947924",
@@ -13,7 +14,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth=getAuth();
+const auth = getAuth();
 const db = getFirestore(app);
 
 export {app, auth,db};

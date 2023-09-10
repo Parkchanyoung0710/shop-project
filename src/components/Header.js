@@ -7,7 +7,7 @@ import React from 'react';
 
 
 
-function Header() {
+const Header = ({ setShow, size }) => {
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -21,15 +21,22 @@ function Header() {
             <Nav.Link href="/pants">PANTS</Nav.Link>
             <Nav.Link href="/shirt">SHIRT</Nav.Link>
             <Nav.Link href="/Weather">오늘의 코디</Nav.Link>
+            
           </Nav>
           <Nav>
             
-            <Nav.Link href="/board">게시판</Nav.Link>
+            <Nav.Link href="/Board">게시판</Nav.Link>
             <Nav.Link eventKey={2} href="/Basket">
             
               <BsCart4 className="icon" size="20"/></Nav.Link>
-              <span>0</span>
-              
+             
+       
+          <span>
+            <i className="fas fa-cart-plus"></i>
+          </span>
+          
+          
+            <Nav.Link href="/">로그아웃</Nav.Link>  
             
             
           </Nav>

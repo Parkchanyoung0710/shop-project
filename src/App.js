@@ -13,31 +13,49 @@ import Signup from './components/Signup/Signup';
 import Main from "./page/Main";
 import Board from './page/Board';
 import Weather from './components/Product/Weather';
+import Basket from './page/Basket';
+import App1 from './page/App1';
+import Write from './page/Write';
+import Boardlist from './page/Boardlist';
+import Amazon from './components/Cart/amazon';
+import Cart from './components/Cart/cart';
 
 
 
 function App() {
- 
-  return (
+
+ return (
     <div className="App">
       <div className='black-nav'>
         <Header></Header>
-        </div>
+
+    </div>
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/Main" element={<Main/>} />
-        <Route path="/Board" element={<Board />} />
         <Route path="/Best" element={<Best />} />
         <Route path="/Top" element={<Top />} />
         <Route path="/Shirt" element={<Shirt />} />
         <Route path="/Pants" element={<Pants />} />
         <Route path="/Weather" element={<Weather />} />
+        <Route path="/Board" element={<Board />} />
+        <Route path="/Basket" element={<Basket />} />
+        <Route path="/App1" element={<App1 />} />
+        <Route path="/Write" element={<Write />} />
+        <Route path="/Boardlist" element={<Boardlist />} />
+        <Route path="/Amazon" element={<Amazon />} />
+        <Route path="/Cart" element={<Cart />} />
+       
         
-        
+     
+
       </Routes>
+      <div className='ft'>
+    <Footer>
       
-    <Footer></Footer>
+    </Footer>
+        </div>
        
     </div>
   );

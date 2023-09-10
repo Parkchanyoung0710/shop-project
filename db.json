@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+        "id":1,
+        "name": "홍길동",
+        "email": "ssss@gaaa.com"
+    },
+    {
+        "id":2,
+        "name": "아아아",
+        "email": "1234@gaaa.com"
+    },
+    {
+        "id":3,
+        "name": "오오오",
+        "email": "ㅁㅁㅁㅁ@gaaa.com"
+    },
+    {
+        "id":4,
+        "name": "우우우",
+        "email": "sㅠㅠㅠ@gaaa.com"
+    }
+],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
