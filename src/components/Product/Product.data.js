@@ -307,7 +307,7 @@ export const WeatherData = [
     desc: '시원한 여름 코디!',
     price: '30,000원',
     image: 'sh5',
-    temper: 28,
+    temper: 32,
     qty: 1,
   },
   {
@@ -316,7 +316,7 @@ export const WeatherData = [
     desc: '밑단 트임 포인트!',
     price: '38,000원',
     image: 'bt1',
-    temper: 28,
+    temper: 32,
     qty: 1,
   },
   {
@@ -325,7 +325,7 @@ export const WeatherData = [
     desc: '따뜻한 핏!',
     price: '35,000원',
     image: 'top7',
-    temper: 5,
+    temper: 16,
     qty: 1,
   },
   {
@@ -334,13 +334,13 @@ export const WeatherData = [
     desc: '깔끔한 핏!',
     price: '108,000원',
     image: 'bt3',
-    temper: 5,
+    temper: 16,
     qty: 1,
   },
   {
     id: 5,
     title: '클래식 텐 오버셔츠',
-    desc: '퀄리티 높은 무지셔츠!',
+    desc: '퀄리티 높은 셔츠!',
     price: '37,000원',
     image: 'sh7',
     temper: 20,
@@ -360,7 +360,7 @@ export const WeatherData = [
     desc: '코디하기 쉬운 셔츠!!',
     price: '41,000원',
     image: 'sh3',
-    temper: 0,
+    temper: 10,
   },
   {
     id: 8,
@@ -368,6 +368,6 @@ export const WeatherData = [
     desc: '사이드 카고 포켓 팬츠!',
     price: '44,500원',
     image: 'bt6',
-    temper: 0,
+    temper: 10,
   },
 ];

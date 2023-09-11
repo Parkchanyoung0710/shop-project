@@ -15,7 +15,6 @@ import Board from './page/Board';
 import Weather from './components/Product/Weather';
 import Basket from './page/Basket';
 import Write from './page/Write';
-import BoardList from './page/BoardList';
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
         <Route path='/Board' element={<Board />} />
         <Route path='/Basket' element={<Basket />} />
         <Route path='/Write' element={<Write />} />
-        <Route path='/BoardList' element={<BoardList />} />
       </Routes>
       <div className='ft'>
         <Footer></Footer>

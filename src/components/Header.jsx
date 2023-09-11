@@ -3,11 +3,13 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 import { Link } from 'react-router-dom';
 
+import './Header.css';
+
 const Header = ({ setShow, size }) => {
   return (
-    <>
+    <div className='navbar'>
+      <Link to='./'>ONEPICK</Link>
       <Link to='/Best'>BEST</Link>
-
       <Link to='/top'>TOP</Link>
       <Link to='/pants'>PANTS</Link>
       <Link to='/shirt'>SHIRT</Link>
@@ -18,7 +20,7 @@ const Header = ({ setShow, size }) => {
         <ShoppingCartOutlinedIcon sx={{ height: '20px' }} />
       </Link>
       <Link to='/'>로그아웃</Link>
-    </>
+    </div>
   );
 };
 
