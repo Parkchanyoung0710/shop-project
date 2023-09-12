@@ -3,16 +3,17 @@
   margin: 0%;
 }
 .navbar {
-  background-color: white;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  
+  background-color: #333;
   color: white;
+  align-items: center;
+
+  display: flex;
+  justify-content: space-evenly;
 }
 a {
-  color: #333;
+  color: white;
   text-decoration: none;
   display: block;
+  transition: color 0.3s;
   text-align: center;
 }
