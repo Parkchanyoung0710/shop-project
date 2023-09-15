@@ -39,7 +39,7 @@ function Weather() {
   return (
     <AppWrap>
       <div>
-        <h1 className='bg-info text-white'>오늘의 코디 추천</h1>
+        <h2 className='bg-info text-white'>오늘의 코디 추천</h2>
         <div className='appContentWrap'>
           <h3>도시를 선택하세요.</h3>
 
@@ -111,7 +111,7 @@ const AppWrap = styled.div`
 `;
 
 const ResultWrap = styled.div`
-  margin-top: 10px;
+  margin-top: 15px;
   border: 1px black solid;
   padding: 0px;
   margin-bottom: 20px;
@@ -129,7 +129,7 @@ const ResultWrap = styled.div`
     margin-top: 5px;
   }
   .sky {
-    font-size: 24px;
+    font-size: 20px;
     text-align: center;
     margin-top: 5px;
   }

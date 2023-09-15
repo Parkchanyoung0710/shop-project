@@ -10,7 +10,7 @@ const Best = () => {
 
   return (
     <div>
-      <h1 className='bg-info text-white'>BEST</h1>
+      <h2 className='bg-info text-white'>BEST</h2>
       <Box sx={{ width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto', marginBottom: 10 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {items.map((item) => (

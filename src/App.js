@@ -10,11 +10,11 @@ import Top from './components/Product/Top';
 import Shirt from './components/Product/Shirt';
 import Pants from './components/Product/Pants';
 import Signup from './components/Signup/Signup';
-import Main from './page/Main';
-import Board from './page/Board';
+import Main from './Page/Main';
+import Board from './Page/Board';
 import Weather from './components/Product/Weather';
-import Basket from './page/Basket';
-import Write from './page/Write';
+import Basket from './Page/Basket';
+import Write from './Page/Write';
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       </div>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/signup' element={<Signup />} />
+        <Route path='/Signup' element={<Signup />} />
         <Route path='/Main' element={<Main />} />
         <Route path='/Best' element={<Best />} />
         <Route path='/Top' element={<Top />} />

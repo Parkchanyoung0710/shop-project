@@ -1,8 +1,12 @@
 .App {
   text-align: center;
 }
+
 .ft {
-  margin-top: 0%;
+  height: 100px;
+  position: relative;
+  width: 100%;
+  padding: 0px;
 }
 .App-logo {
   height: 40vmin;

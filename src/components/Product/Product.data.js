@@ -1,6 +1,6 @@
 export const mainData = [
   {
-    id: 2,
+    id: 1,
     title: '캐주얼 파란 후드티',
     desc: '편하게 입는 후드티!',
     image: 'best2',
@@ -9,7 +9,7 @@ export const mainData = [
   },
 
   {
-    id: 4,
+    id: 2,
     title: '시그니처 무지셔츠',
     desc: '시원한 오버셔츠입니다!',
     image: 'best4',
@@ -17,11 +17,35 @@ export const mainData = [
     qty: 1,
   },
   {
-    id: 5,
+    id: 3,
     title: '그레이스 와이드데님',
     desc: '시원한 와이드팬츠!',
     image: 'best5',
     price: '50,000원',
+    qty: 1,
+  },
+  {
+    id: 4,
+    title: '베이직 세미오버 셔츠',
+    desc: '베이직 셔츠!',
+    image: 'best9',
+    price: '49,000원',
+    qty: 1,
+  },
+  {
+    id: 5,
+    title: '유니버시티 반팔티',
+    desc: '전면 프린팅 포인트!',
+    price: '20,000원',
+    image: 'top2',
+    qty: 1,
+  },
+  {
+    id: 6,
+    title: '스톤워싱 데님셔츠',
+    desc: '매력적인 오버핏 셔츠!',
+    price: '49,000원',
+    image: 'sh1',
     qty: 1,
   },
 ];
@@ -47,10 +71,10 @@ export const bestData = [
   },
 
   {
-    id: 3,
-    title: '캐주얼 파란 후드티',
-    desc: '편하게 입는 후드티!',
-    image: 'best2',
+    id: 9,
+    title: '베이직 세미오버 셔츠',
+    desc: '베이직 셔츠!',
+    image: 'best9',
     price: '49,000원',
     qty: 1,
   },
