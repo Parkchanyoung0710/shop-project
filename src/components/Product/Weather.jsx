@@ -75,6 +75,7 @@ function Weather() {
                       const temp = Math.round((result.data.main.temp - 273.15) * 1);
                       if (item.temper <= temp + 5 && temp - 5 <= item.temper) return item;
                     })
+                    .slice(0, 2)
                     .map((item) => (
                       <Grid xs={2} sm={4} md={4} key={item.id} className='recommend-cloth'>
                         <CardBox key={item.id} cardTitle={item.title} imageSrc={`./Product/assets/${item.image}.png`} cardDetail={item.desc} cardPrice={item.price} />

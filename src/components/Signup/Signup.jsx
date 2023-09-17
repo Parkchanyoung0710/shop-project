@@ -1,44 +1,56 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
-import InputControl from "../InputControl/InputControl";
-import { auth } from "../../firebase";
+import InputControl from '../InputControl/InputControl';
+import { auth } from '../../firebase';
 
-import styles from "./Signup.module.css";
+import styles from './Signup.module.css';
 
 function Signup() {
   const navigate = useNavigate();
   const [values, setValues] = useState({
-    name: "",
-    email: "",
-    pass: "",
+    name: '',
+    email: '',
+    password: '',
+    passwordCheck: '',
   });
-  const [errorMsg, setErrorMsg] = useState("");
-  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(true);
 
   const handleSubmission = () => {
-    if (!values.name || !values.email || !values.pass) {
-      setErrorMsg("빈칸을 채워주세요");
+    if (!values.name || !values.email || !values.password || !values.passwordCheck) {
+      setErrorMsg('빈칸을 채워주세요');
       return;
     }
-    setErrorMsg("");
 
-    setSubmitButtonDisabled(true);
-    createUserWithEmailAndPassword(auth, values.email, values.pass)
+    if (values.password !== values.passwordCheck) {
+      setErrorMsg('비밀번호가 일치하지 않습니다.');
+      return;
+    }
+
+    setErrorMsg('');
+
+    createUserWithEmailAndPassword(auth, values.email, values.password)
       .then(async (res) => {
-        setSubmitButtonDisabled(false);
         const user = res.user;
         await updateProfile(user, {
           displayName: values.name,
         });
-        navigate("/");
+        navigate('/');
         alert('회원가입 성공!');
       })
       .catch((err) => {
-        setSubmitButtonDisabled(false);
         setErrorMsg(err.message);
       });
+  };
+
+  const handleChangeInput = () => {
+    if (values.name && values.email && values.password && values.passwordCheck && values.password === values.passwordCheck) {
+      setSubmitButtonDisabled(false);
+    } else {
+      setSubmitButtonDisabled(true);
+    }
   };
 
   return (
@@ -46,26 +58,21 @@ function Signup() {
       <div className={styles.innerBox}>
         <h1 className={styles.heading}>회원가입</h1>
 
+        <InputControl label='Name' placeholder='성함을 입력하세요' onChange={(event) => setValues((prev) => ({ ...prev, name: event.target.value }))} onKeyUp={handleChangeInput} />
+        <InputControl label='Email' placeholder='이메일을 입력하세요' onChange={(event) => setValues((prev) => ({ ...prev, email: event.target.value }))} onKeyUp={handleChangeInput} />
         <InputControl
-          label="Name"
-          placeholder="성함을 입력하세요"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, name: event.target.value }))
-          }
+          type='password'
+          label='Password'
+          placeholder='비밀번호를 입력하세요'
+          onChange={(event) => setValues((prev) => ({ ...prev, password: event.target.value }))}
+          onKeyUp={handleChangeInput}
         />
         <InputControl
-          label="Email"
-          placeholder="이메일을 입력하세요"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, email: event.target.value }))
-          }
-        />
-        <InputControl type="password"
-          label="Password"
-          placeholder="비밀번호를 입력하세요"
-          onChange={(event) =>
-            setValues((prev) => ({ ...prev, pass: event.target.value }))
-          }
+          type='password'
+          label='Password'
+          placeholder='비밀번호를 확인'
+          onChange={(event) => setValues((prev) => ({ ...prev, passwordCheck: event.target.value }))}
+          onKeyUp={handleChangeInput}
         />
 
         <div className={styles.footer}>
@@ -74,9 +81,9 @@ function Signup() {
             회원가입하기
           </button>
           <p>
-          이미 계정이 있습니까?{" "}
+            이미 계정이 있습니까?
             <span>
-              <Link to="/">로그인</Link>
+              <Link to='/Login'>로그인</Link>
             </span>
           </p>
         </div>

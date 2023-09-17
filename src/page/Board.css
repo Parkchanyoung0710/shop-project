@@ -1,8 +1,22 @@
-.bd {
-  margin-top: 30px;
-  margin-bottom: 50px;
+.board-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 208.266px);
 }
-.h22 {
-  margin-bottom: 20px;
-  padding: 10px;
+
+.create-board {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.board-item {
+  cursor: pointer;
+}
+
+.board-item:hover {
+  background-color: lightgray !important;
 }

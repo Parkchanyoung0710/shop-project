@@ -14,6 +14,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { CartContext } from '../CartProvider';
+import Alert from './Alert';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -30,6 +31,7 @@ export default function CardBox(props) {
   const { cardTitle, imageSrc, cardDetail, cardPrice } = props;
 
   const [expanded, setExpanded] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const { addToCart } = useContext(CartContext);
 
@@ -38,34 +40,38 @@ export default function CardBox(props) {
   };
 
   const handleClickAddCart = () => {
+    setShowAlert(true);
     addToCart(props);
   };
 
   return (
-    <Card sx={{ maxWidth: 300, marginTop: 5 }}>
-      <CardHeader title={cardTitle} />
-      <CardMedia component='img' image={require(`${imageSrc}`)} />
-      <CardContent>
-        <Typography variant='body2' color='text.secondary'>
-          가격 : {cardPrice}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label='add to favorites'>
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label='cart'>
-          <ShoppingCartIcon onClick={handleClickAddCart} />
-        </IconButton>
-        <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label='show more'>
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout='auto' unmountOnExit>
+    <>
+      <Card sx={{ maxWidth: 300, marginTop: 5 }}>
+        <CardHeader title={cardTitle} />
+        <CardMedia component='img' image={require(`${imageSrc}`)} />
         <CardContent>
-          <Typography>{cardDetail}</Typography>
+          <Typography variant='body2' color='text.secondary'>
+            가격 : {cardPrice}
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton aria-label='add to favorites'>
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label='cart'>
+            <ShoppingCartIcon onClick={handleClickAddCart} />
+          </IconButton>
+          <ExpandMore expand={expanded} onClick={handleExpandClick} aria-expanded={expanded} aria-label='show more'>
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout='auto' unmountOnExit>
+          <CardContent>
+            <Typography>{cardDetail}</Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+      {showAlert && <Alert showAlert={showAlert} setShowAlert={setShowAlert} content={'장바구니에 담겼습니다.'} />}
+    </>
   );
 }
