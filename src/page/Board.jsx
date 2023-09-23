@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -17,7 +17,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-import './board.css';
+import './Board.css';
 
 const Board = () => {
   const navigate = useNavigate();
@@ -43,6 +43,14 @@ const Board = () => {
       userName: '테스트',
       createdAt: '2023/09/04',
       content: 'Test3',
+      uId: 'WmRGnSPs4efpqwxycUl9WrHYYkB3',
+      id: 3,
+    },
+    4: {
+      title: '게시판 4',
+      userName: '한신대',
+      createdAt: '2023/09/16',
+      content: '한신대',
       uId: 'WmRGnSPs4efpqwxycUl9WrHYYkB3',
       id: 3,
     },
@@ -103,9 +111,9 @@ const Board = () => {
 
   return (
     <>
-      <h2 className='bg-info text-white'>게시판</h2>
+      <h3 className='bg-info text-white'>게시판</h3>
       <section className='board-container'>
-        <Box sx={{ width: '60%', m: '50px auto 50px auto' }}>
+        <Box sx={{ width: '60%', m: '30px auto 50px auto' }}>
           <TableContainer>
             <Table sx={{ minWidth: 650 }} aria-label='simple table'>
               <TableHead>

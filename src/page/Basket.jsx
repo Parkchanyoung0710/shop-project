@@ -23,15 +23,15 @@ function Basket() {
 
   if (cartItems.length === 0) {
     return (
-      <div style={{ minHeight: 'calc(100vh - 208px)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ minHeight: 'calc(100vh - 202px)', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <h4>장바구니가 비어있습니다</h4>
       </div>
     );
   }
 
   return (
-    <div style={{ minHeight: 'calc(100vh - 208px)', position: 'relative' }}>
-      <h2 className='bg-info text-white'>장바구니</h2>
+    <div style={{ minHeight: 'calc(100vh - 202px)', position: 'relative' }}>
+      <h3 className='bg-info text-white'>장바구니</h3>
       <Box sx={{ width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto', marginBottom: 13 }}>
         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {cartItems.map((item) => {
@@ -44,7 +44,7 @@ function Basket() {
           })}
         </Grid>
       </Box>
-      <h2 style={{ fontSize: '23px', position: 'absolute', bottom: 50, right: '20%' }}>총 금액 : {totalPrice.toLocaleString()}원</h2>
+      <h2 style={{ fontSize: '23px', position: 'absolute', bottom: 50, right: '22%', color: 'red' }}>총 금액 : {totalPrice.toLocaleString()}원</h2>
     </div>
   );
 }

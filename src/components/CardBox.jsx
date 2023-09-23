@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import './CardBox.css';
 import { CartContext } from '../CartProvider';
 import Alert from './Alert';
 
@@ -48,7 +49,7 @@ export default function CardBox(props) {
     <>
       <Card sx={{ maxWidth: 300, marginTop: 5 }}>
         <CardHeader title={cardTitle} />
-        <CardMedia component='img' image={require(`${imageSrc}`)} />
+        <CardMedia className="img"component='img' image={require(`${imageSrc}`)} />
         <CardContent>
           <Typography variant='body2' color='text.secondary'>
             가격 : {cardPrice}

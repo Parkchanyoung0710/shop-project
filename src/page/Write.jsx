@@ -22,7 +22,6 @@ export default function Write() {
     }
   );
 
-
   const handleChangeBoard = (e, type) => {
     if (type === 'title') {
       setBoardInfo((prev) => ({ ...prev, title: e.target.value }));

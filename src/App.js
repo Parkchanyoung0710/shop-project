@@ -16,6 +16,7 @@ import Weather from './components/Product/Weather';
 import Basket from './page/Basket';
 import Write from './page/Write';
 
+
 function App() {
   return (
     <div className='App'>
@@ -23,14 +24,14 @@ function App() {
         <Header></Header>
       </div>
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<Weather />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Signup' element={<Signup />} />
         <Route path='/Best' element={<Best />} />
         <Route path='/Top' element={<Top />} />
         <Route path='/Shirt' element={<Shirt />} />
         <Route path='/Pants' element={<Pants />} />
-        <Route path='/Weather' element={<Weather />} />
+        <Route path='/Main' element={<Main />} />
         <Route path='/Board' element={<Board />} />
         <Route path='/Basket' element={<Basket />} />
         <Route path='/Write' element={<Write />} />

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { Link } from 'react-router-dom';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
+import Alert from '../Alert';
 import InputControl from '../InputControl/InputControl';
 import { auth } from '../../firebase';
 
 import styles from './Signup.module.css';
 
 function Signup() {
-  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [values, setValues] = useState({
     name: '',
     email: '',
@@ -32,13 +33,19 @@ function Signup() {
     setErrorMsg('');
 
     createUserWithEmailAndPassword(auth, values.email, values.password)
-      .then(async (res) => {
-        const user = res.user;
-        await updateProfile(user, {
-          displayName: values.name,
-        });
-        navigate('/');
-        alert('회원가입 성공!');
+      .then((res) => {
+        setIsLoggedIn(true);
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            userName: values.name,
+            uId: res.user.uid,
+          })
+        );
+
+        setTimeout(() => {
+          window.location.href = '/';
+        }, 500);
       })
       .catch((err) => {
         setErrorMsg(err.message);
@@ -54,41 +61,44 @@ function Signup() {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.innerBox}>
-        <h1 className={styles.heading}>회원가입</h1>
+    <>
+      <div className={styles.container}>
+        <div className={styles.innerBox}>
+          <h1 className={styles.heading}>회원가입</h1>
 
-        <InputControl label='Name' placeholder='성함을 입력하세요' onChange={(event) => setValues((prev) => ({ ...prev, name: event.target.value }))} onKeyUp={handleChangeInput} />
-        <InputControl label='Email' placeholder='이메일을 입력하세요' onChange={(event) => setValues((prev) => ({ ...prev, email: event.target.value }))} onKeyUp={handleChangeInput} />
-        <InputControl
-          type='password'
-          label='Password'
-          placeholder='비밀번호를 입력하세요'
-          onChange={(event) => setValues((prev) => ({ ...prev, password: event.target.value }))}
-          onKeyUp={handleChangeInput}
-        />
-        <InputControl
-          type='password'
-          label='Password'
-          placeholder='비밀번호를 확인'
-          onChange={(event) => setValues((prev) => ({ ...prev, passwordCheck: event.target.value }))}
-          onKeyUp={handleChangeInput}
-        />
+          <InputControl label='Name' placeholder='성함을 입력하세요' onChange={(event) => setValues((prev) => ({ ...prev, name: event.target.value }))} onKeyUp={handleChangeInput} />
+          <InputControl label='Email' placeholder='이메일을 입력하세요' onChange={(event) => setValues((prev) => ({ ...prev, email: event.target.value }))} onKeyUp={handleChangeInput} />
+          <InputControl
+            type='password'
+            label='Password'
+            placeholder='비밀번호를 입력하세요'
+            onChange={(event) => setValues((prev) => ({ ...prev, password: event.target.value }))}
+            onKeyUp={handleChangeInput}
+          />
+          <InputControl
+            type='password'
+            label='Password'
+            placeholder='비밀번호를 확인'
+            onChange={(event) => setValues((prev) => ({ ...prev, passwordCheck: event.target.value }))}
+            onKeyUp={handleChangeInput}
+          />
 
-        <div className={styles.footer}>
-          <b className={styles.error}>{errorMsg}</b>
-          <button onClick={handleSubmission} disabled={submitButtonDisabled}>
-            회원가입하기
-          </button>
-          <p>
-            이미 계정이 있습니까?
-            <span>
-              <Link to='/Login'>로그인</Link>
-            </span>
-          </p>
+          <div className={styles.footer}>
+            <b className={styles.error}>{errorMsg}</b>
+            <button onClick={handleSubmission} disabled={submitButtonDisabled}>
+              회원가입하기
+            </button>
+            <p>
+              이미 계정이 있습니까?
+              <span>
+                <Link to='/Login'>로그인</Link>
+              </span>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+      {isLoggedIn && <Alert showAlert={true} setShowAlert={setIsLoggedIn} content={'회원가입 성공'} />}
+    </>
   );
 }
 

@@ -39,10 +39,8 @@ function Weather() {
   return (
     <AppWrap>
       <div>
-        <h2 className='bg-info text-white'>오늘의 코디 추천</h2>
+        <h3 className='bg-info text-white'>오늘의 코디 추천</h3>
         <div className='appContentWrap'>
-          <h3>도시를 선택하세요.</h3>
-
           <Box sx={{ minWidth: 120 }}>
             <FormControl fullWidth>
               <Select defaultValue='Seoul' onChange={handleUpdateLocation}>
@@ -52,6 +50,7 @@ function Weather() {
                 <MenuItem value='Daegu'>대구</MenuItem>
                 <MenuItem value='Gwangju'>광주</MenuItem>
                 <MenuItem value='Busan'>부산</MenuItem>
+                <MenuItem value='Bangkok'>방콕</MenuItem>
               </Select>
             </FormControl>
           </Box>
@@ -60,7 +59,7 @@ function Weather() {
             <ResultWrap>
               <div className='city'>{result.data.name}</div>
               <div className='temperature'>
-                {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C;
+                {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
                 <div className='sky'>{result.data.weather[0].main}</div>
               </div>
 
@@ -69,7 +68,7 @@ function Weather() {
               {/* <CardBox /> */}
 
               <Box sx={{ width: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto' }}>
-                <Grid container spacing={{ xs: 4, md: 4 }} columns={{ xs: 4, sm: 4, md: 4 }} sx={{ flexWrap: 'nowrap' }}>
+                <Grid container spacing={{ xs: 6, md: 10 }} columns={{ xs: 4, sm: 4, md: 4 }} sx={{ flexWrap: 'nowrap' }}>
                   {items
                     .filter((item) => {
                       const temp = Math.round((result.data.main.temp - 273.15) * 1);
@@ -98,10 +97,10 @@ const AppWrap = styled.div`
   height: 100vh;
   .appContentWrap {
     left: 50%;
-    top: 60%;
+    top: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
-    padding: 20px;
+    padding: 65px;
   }
   input {
     padding: 25px;
@@ -112,10 +111,10 @@ const AppWrap = styled.div`
 `;
 
 const ResultWrap = styled.div`
-  margin-top: 15px;
+  margin-top: 20px;
   border: 1px black solid;
-  padding: 0px;
-  margin-bottom: 20px;
+  padding: 30px;
+  margin-bottom: 15px;
   @media screen and (max-width: 1000px) {
     flex-direction: column;
     align-items: flex-end;
@@ -126,7 +125,7 @@ const ResultWrap = styled.div`
     font-size: 30px;
   }
   .temperature {
-    font-size: 24px;
+    font-size: 22px;
     margin-top: 5px;
   }
   .sky {
@@ -138,7 +137,7 @@ const ResultWrap = styled.div`
   .recommend-cloth {
     span {
       white-space: nowrap;
-      font-size: 18px;
+      font-size: 20px;
     }
   }
 `;

@@ -31,12 +31,12 @@ const Header = () => {
     <>
       <div className='navbar'>
         <Link to='./'>ONEPICK</Link>
+        <Link to='./'>프로필</Link>
+        <Link to='/Main'>WEEKLY </Link>
         <Link to='/Best'>BEST</Link>
         <Link to='/Top'>TOP</Link>
         <Link to='/Pants'>PANTS</Link>
         <Link to='/Shirt'>SHIRT</Link>
-        <Link to='/Weather'>오늘의 코디</Link>
-
         <Link to='/Board'>게시판</Link>
         <Link to='/Basket'>
           <ShoppingCartOutlinedIcon sx={{ height: '28px' }} />

@@ -4,13 +4,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 208.266px);
+  min-height: calc(100vh - 190px);
 }
 
 .create-board {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 30px;
+  right: 160px;
 }
 
 .board-item {
