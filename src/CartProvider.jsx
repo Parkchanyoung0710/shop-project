@@ -6,7 +6,9 @@ function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addToCart = (item) => {
-    if (cart.includes(item)) {
+    const checkDup = cart.filter((cartItem) => cartItem.cardTitle === item.cardTitle);
+
+    if (checkDup.length > 0) {
       setCart(cart.filter((cartItem) => cartItem.cardTitle !== item.cardTitle));
     } else {
       setCart([...cart, item]);

@@ -47,9 +47,9 @@ export default function CardBox(props) {
 
   return (
     <>
-      <Card sx={{ maxWidth: 300, marginTop: 5 }}>
+      <Card sx={{ minWidth: 200, maxWidth: 300, marginTop: 5 }}>
         <CardHeader title={cardTitle} />
-        <CardMedia className="img"component='img' image={require(`${imageSrc}`)} />
+        <CardMedia className='img' component='img' image={require(`${imageSrc}`)} />
         <CardContent>
           <Typography variant='body2' color='text.secondary'>
             가격 : {cardPrice}

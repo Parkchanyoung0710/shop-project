@@ -31,7 +31,7 @@ const Header = () => {
     <>
       <div className='navbar'>
         <Link to='./'>ONEPICK</Link>
-        <Link to='./'>프로필</Link>
+        <Link to='/Profile'>프로필</Link>
         <Link to='/Main'>WEEKLY </Link>
         <Link to='/Best'>BEST</Link>
         <Link to='/Top'>TOP</Link>

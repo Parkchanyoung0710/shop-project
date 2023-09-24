@@ -39,6 +39,7 @@ function Signup() {
           'user',
           JSON.stringify({
             userName: values.name,
+            userEmail: values.email,
             uId: res.user.uid,
           })
         );

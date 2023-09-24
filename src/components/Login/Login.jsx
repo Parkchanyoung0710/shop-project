@@ -31,6 +31,7 @@ function Login() {
           'user',
           JSON.stringify({
             userName: res.user.displayName,
+            userEmail: values.email,
             uId: res.user.uid,
           })
         );
@@ -40,7 +41,7 @@ function Login() {
         }, 500);
       })
       .catch((err) => {
-        setErrorMsg(err.message);
+        setErrorMsg('아이디/비밀번호를 확인하여 주세요.');
       });
   };
 

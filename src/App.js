@@ -15,7 +15,7 @@ import Board from './page/Board';
 import Weather from './components/Product/Weather';
 import Basket from './page/Basket';
 import Write from './page/Write';
-
+import Profile from './page/Profile';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
         <Route path='/' element={<Weather />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Signup' element={<Signup />} />
+        <Route path='Profile' element={<Profile />} />
         <Route path='/Best' element={<Best />} />
         <Route path='/Top' element={<Top />} />
         <Route path='/Shirt' element={<Shirt />} />
